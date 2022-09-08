@@ -21,6 +21,10 @@ As an admin, you can approve users chalenges ideas or white down your own.
 
 Clone the project
 
+```bash
+  git clone https://github.com/TiredTorch/32pass.git
+```
+
 Go to the project directory
 
 ```bash
@@ -42,7 +46,7 @@ Start the server
 
 ## Tech Stack
 
-**Client:** React, Firebase, TailwindCSS
+**Client:** React
 
 **Server:** Node, Firebase
 
