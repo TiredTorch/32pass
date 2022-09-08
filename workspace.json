@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "32pass-landing": "apps/32pass-landing",
+    "32pass-landing-e2e": "apps/32pass-landing-e2e"
+  }
+}
