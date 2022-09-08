@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@32pass/landing-lib": ["libs/landing-lib/src/index.ts"],
+      "@32pass/shared": ["libs/shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
