@@ -1,9 +1,13 @@
-import { PageLayout } from "../../layout";
+import { RegisterForm } from "../../components";
+import { FormLayout, PageLayout } from "../../layout";
 
 export const RegisterPageContainer = () => {
 	return (
 		<PageLayout>
-			Register
+			<FormLayout
+				form={<RegisterForm />}
+				textContent={"aboba"}
+			/>
 		</PageLayout>
 	);
 };

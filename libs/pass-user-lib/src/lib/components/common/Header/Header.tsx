@@ -1,15 +1,19 @@
 import { FC } from "react";
+import { Box } from "@mui/material";
 import { HeaderProps } from "./Header.types";
+import { headerStyles } from "./Header.styles";
 
 export const Header: FC<HeaderProps> = ({
 	isPrivate
 }) => {
 	return (
-		<div>
+		<Box
+			sx={headerStyles.root}
+		>
 			Header
 			{" "}
 			{isPrivate ? "(Auth)" : "(Non auth)"}
-		</div>
+		</Box>
 	);
 };
 

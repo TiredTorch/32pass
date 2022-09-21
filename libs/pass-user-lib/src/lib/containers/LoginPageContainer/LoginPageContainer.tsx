@@ -1,9 +1,13 @@
-import { PageLayout } from "../../layout";
+import { LoginForm } from "../../components";
+import { FormLayout, PageLayout } from "../../layout";
 
 export const LoginPageContainer = () => {
 	return (
 		<PageLayout>
-			Login
+			<FormLayout
+				form={<LoginForm />}
+				textContent={"aboba"}
+			/>
 		</PageLayout>
 	);
 };
