@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@32pass/landing-lib": ["libs/landing-lib/src/index.ts"],
+      "@32pass/pass-admin-lib": ["libs/pass-admin-lib/src/index.ts"],
+      "@32pass/pass-user-lib": ["libs/pass-user-lib/src/index.ts"],
       "@32pass/shared": ["libs/shared/src/index.ts"]
     }
   },

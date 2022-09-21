@@ -3,9 +3,15 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
+    "start:pass-admin": "nx serve pass-admin --port=4201",
+    "start:pass-user": "nx serve pass-user --port=4200",
+		"run:many": "nx run-many --target=build --projects=pass-admin,pass-user --prod",
+    "build:pass-admin": "nx build pass-admin --skip-nx-cache --prod",
+    "build:pass-user": "nx build pass-user --skip-nx-cache --prod",
+		"test:all": "nx run-many --target=test --all --parallel=10 --maxParallel=10 --updateSnapshot --prod --skip-nx-cache --verbose",
+		"test:pass-admin": "nx test pass-admin --env=jsdom --watchAll --updateSnapshot",
+		"test:pass-user": "nx test pass-user --env=jsdom --watchAll --updateSnapshot"
+
   },
   "private": true,
   "dependencies": {
