@@ -3,6 +3,7 @@ import { Box, CircularProgress } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import { commonRoutes } from "./commonRoutes";
 import { privateRoutes } from "./privateRoutes";
+import { PrivateRoute, PublicRoute } from "@32pass/pass-user-lib";
 
 const AppRoutes = () => {
 	return (
@@ -24,7 +25,13 @@ const AppRoutes = () => {
 					<Route
 						{...route}
 						key={`r_${index}_${route.path}`}
-						element={route.element}
+						element={
+							route.isAuth ? (
+								<PrivateRoute>{route.element}</PrivateRoute>
+							) : (
+								<PublicRoute>{route.element}</PublicRoute>
+							)
+						}
 					/>
 				))}
 			</Routes>

@@ -1,16 +1,21 @@
 import { Box } from "@mui/material";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as GoogleIcon } from "../../../assets/icons/googleIcon.svg";
 import { AppRouteEnum } from "../../../types";
 import { Button, Input } from "../../ui";
 import { loginFormStyles } from "./LoginForm.styles";
+import { LoginFormProps } from "./LoginForm.types";
 
-export const LoginForm = () => {
+export const LoginForm: FC<LoginFormProps> = ({
+	handleAuth
+}) => {
 	return (
 		<Box
 			sx={loginFormStyles.root}
 		>
 			<Button
+				onClick={handleAuth}
 				icon={<GoogleIcon />}
 				type={"white-shadow"}
 			>
