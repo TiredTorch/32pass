@@ -6,7 +6,8 @@ import { buttonStyles } from "./Button.styles";
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 	type,
 	children,
-	icon
+	icon,
+	onClick
 }) => {
 	return (
 		<MUIButton
@@ -19,6 +20,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 				type === "white-shadow" && buttonStyles.whiteShadow,
 				type === "blue-no-border" && buttonStyles.blueNoBorder,
 			]}
+			onClick={onClick}
 		>
 			{icon}
 			{children}
