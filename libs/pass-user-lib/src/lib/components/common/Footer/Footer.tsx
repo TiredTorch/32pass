@@ -1,8 +1,13 @@
-import React from "react";
+import { Box } from "@mui/material";
+import { footerStyles } from "./Footer.styles";
 
 export const Footer = () => {
 	return (
-		<div>Footer</div>
+		<Box
+			sx={footerStyles.root}
+		>
+			Footer
+		</Box>
 	);
 };
 
