@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/pass-user/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/pass-user",
+        "index": "apps/pass-user/src/index.html",
+        "baseHref": "/",
+        "main": "apps/pass-user/src/main.tsx",
+        "polyfills": "apps/pass-user/src/polyfills.ts",
+        "tsConfig": "apps/pass-user/tsconfig.app.json",
+        "assets": [
+          "apps/pass-user/src/favicon.ico",
+          "apps/pass-user/src/assets"
+        ],
+        "styles": ["apps/pass-user/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/pass-user/src/environments/environment.ts",
+              "with": "apps/pass-user/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "pass-user:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "pass-user:build:development"
+        },
+        "production": {
+          "buildTarget": "pass-user:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/pass-user/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/pass-user"],
+      "options": {
+        "jestConfig": "apps/pass-user/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -2,9 +2,12 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "32pass-landing": "apps/32pass-landing",
-    "32pass-landing-e2e": "apps/32pass-landing-e2e",
-    "landing-lib": "libs/landing-lib",
+    "pass-admin": "apps/pass-admin",
+    "pass-admin-e2e": "apps/pass-admin-e2e",
+    "pass-admin-lib": "libs/pass-admin-lib",
+    "pass-user": "apps/pass-user",
+    "pass-user-e2e": "apps/pass-user-e2e",
+    "pass-user-lib": "libs/pass-user-lib",
     "shared": "libs/shared"
   }
 }
