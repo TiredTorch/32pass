@@ -1,14 +1,14 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './App.module.scss';
-import NxWelcome from './nx-welcome';
+import { CssBaseline } from "@mui/material";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "../routes";
 
-export function App() {
+const App = () => {
   return (
-    <>
-      <NxWelcome title="pass-user" />
-      <div />
-    </>
+    <BrowserRouter>
+      <CssBaseline/>
+      <AppRoutes />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
