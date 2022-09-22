@@ -5,6 +5,7 @@ import { userAuth } from "@32pass/shared";
 import { LoginForm } from "../../components";
 import { ReactComponent as UnAuthLogo } from "../../assets/icons/unauthLogo.svg";
 import { FormLayout, PageLayout } from "../../layout";
+import { AppRouteEnum } from "../../types";
 
 export const LoginPageContainer = () => {
 
@@ -21,7 +22,9 @@ export const LoginPageContainer = () => {
 	console.log(error);
 
 	return (
-		<PageLayout>
+		<PageLayout
+			currentPage={AppRouteEnum.LOGIN}
+		>
 			<FormLayout
 				form={<LoginForm
 					handleAuth={handleAuthWithGoogle}

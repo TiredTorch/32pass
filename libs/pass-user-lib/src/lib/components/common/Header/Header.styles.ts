@@ -23,13 +23,13 @@ export const headerStyles = {
 		flexDirection: "row",
 		justifyContent: "center",
 		alignItems: "center",
-		
+
 	},
 	authorizedExit: {
 		"&::before": {
 			content: "''",
 			display: "block",
-			//transform: "translateY(calc(50px - 50%))",
+			cursor: "pointer",
 			height: "24px",
 			border: "1px solid black",
 			background: "black",

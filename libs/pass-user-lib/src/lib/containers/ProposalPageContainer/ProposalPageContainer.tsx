@@ -1,8 +1,12 @@
 import { PageLayout } from "../../layout";
+import { AppRouteEnum } from "../../types";
 
 export const ProposalPageContainer = () => {
 	return (
-		<PageLayout isPrivate>
+		<PageLayout
+			currentPage={AppRouteEnum.PROPOSAL}
+			isPrivate
+		>
 			Proposal
 		</PageLayout>
 	);
