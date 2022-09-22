@@ -7,7 +7,8 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 	type,
 	children,
 	icon,
-	onClick
+	onClick,
+	sx
 }) => {
 	return (
 		<MUIButton
@@ -19,6 +20,9 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 				buttonStyles.root,
 				type === "white-shadow" && buttonStyles.whiteShadow,
 				type === "blue-no-border" && buttonStyles.blueNoBorder,
+				type === "header-nav-enabled" && buttonStyles.headerNavEnabled,
+				type === "header-nav-disabled" && buttonStyles.headerNavDisabled,
+				sx as Record<string, unknown>,
 			]}
 			onClick={onClick}
 		>

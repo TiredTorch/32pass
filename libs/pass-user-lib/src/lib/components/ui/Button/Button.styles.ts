@@ -31,5 +31,31 @@ export const buttonStyles = {
 		"&:active": {
 			boxShadow: "inset 0px 0px 2px 4px rgba(9, 30, 63, 0.5)",
 		},
-	}
+	},
+	headerNavEnabled: {
+		background: "white",
+		borderRadius: "50%",
+		width: "calc(3vmin + 8px)",
+		aspectRatio: "1",
+		minWidth: "0",
+		minHeight: "0",
+		maxWidth: "calc(3vmin + 8px)",
+		margin: "0",
+		padding: "0",
+		"& svg": {
+			width: "calc(3vmin)",
+			height: "calc(3vmin)",
+		},
+		"&:hover": {
+			background: "white"
+		}
+	},
+	headerNavDisabled: {
+		width: "calc(3vmin + 8px)",
+		maxWidth: "calc(3vmin + 8px)",
+		"& svg": {
+			width: "calc(3vmin)",
+			height: "calc(3vmin)",
+		}
+	},
 };
