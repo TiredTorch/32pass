@@ -1,3 +1,7 @@
+import { AppRouteEnum } from "../../../types";
+
 export type HeaderProps = {
-	isPrivate: boolean
+	isPrivate: boolean,
+	avatarSource: string,
+	currentPage: AppRouteEnum,
 };

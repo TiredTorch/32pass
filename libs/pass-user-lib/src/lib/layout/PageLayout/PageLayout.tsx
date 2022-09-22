@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import { Footer, Header } from "../../components";
 import { pageLayoutStyles } from "./PageLayout.styles";
 import { PageLayoutProps } from "./PageLayout.types";
+import { AppRouteEnum } from "../../types";
 
 export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
 	children,
@@ -12,7 +13,11 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
 		<Box
 			sx={pageLayoutStyles.root}
 		>
-			<Header isPrivate={!!isPrivate} />
+			<Header
+				isPrivate={!!isPrivate}
+				avatarSource={""}
+				currentPage={AppRouteEnum.HOME}
+			/>
 			{children}
 			{isPrivate && <Footer />}
 		</Box>
