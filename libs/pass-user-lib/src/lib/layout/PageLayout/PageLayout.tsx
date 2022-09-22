@@ -1,12 +1,11 @@
 import { FC, PropsWithChildren, useCallback } from "react";
 import { Box } from "@mui/material";
+import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { userAuth } from "@32pass/shared";
 import { Footer, Header } from "../../components";
 import { pageLayoutStyles } from "./PageLayout.styles";
 import { PageLayoutProps } from "./PageLayout.types";
-import { AppRouteEnum } from "../../types";
-import { signOut } from "firebase/auth";
 
 export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
 	children,
