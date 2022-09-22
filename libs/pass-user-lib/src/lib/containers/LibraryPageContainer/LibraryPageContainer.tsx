@@ -1,8 +1,12 @@
 import { PageLayout } from "../../layout";
+import { AppRouteEnum } from "../../types";
 
 export const LibraryPageContainer = () => {
 	return (
-		<PageLayout isPrivate>
+		<PageLayout
+			currentPage={AppRouteEnum.LIBRARY}
+			isPrivate
+		>
 			Library
 		</PageLayout>
 	);

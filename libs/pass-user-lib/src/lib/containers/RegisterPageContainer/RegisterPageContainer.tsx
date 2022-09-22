@@ -5,6 +5,7 @@ import { userAuth } from "@32pass/shared";
 import { RegisterForm } from "../../components";
 import { ReactComponent as UnAuthLogo } from "../../assets/icons/unauthLogo.svg";
 import { FormLayout, PageLayout } from "../../layout";
+import { AppRouteEnum } from "../../types";
 
 export const RegisterPageContainer = () => {
 	const [signInWithGoogle] = useSignInWithGoogle(userAuth);
@@ -17,7 +18,9 @@ export const RegisterPageContainer = () => {
 	);
 
 	return (
-		<PageLayout>
+		<PageLayout
+			currentPage={AppRouteEnum.REGISTER}
+		>
 			<FormLayout
 				form={<RegisterForm
 					handleAuth={handleAuthWithGoogle}
