@@ -5,6 +5,12 @@
   },
   "hosting": {
     "public": "dist/apps/pass-user",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
