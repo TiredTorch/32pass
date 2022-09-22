@@ -3,6 +3,15 @@
 
 name: Deploy to Firebase Hosting on PR
 'on': pull_request
+
+env:
+  NX_API_KEY: ${{secrets.NX_API_KEY}}
+  NX_AUTH_DOMAIN: ${{secrets.NX_AUTH_DOMAIN}}
+  NX_PROJECT_ID: ${{secrets.NX_PROJECT_ID}}
+  NX_STORAGE_BUCKET: ${{secrets.NX_STORAGE_BUCKET}}
+  NX_MESSAGING_SENDER_ID: ${{secrets.NX_MESSAGING_SENDER_ID}}
+  NX_APP_ID: ${{secrets.NX_APP_ID}}
+
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
