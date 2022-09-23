@@ -1,3 +1,3 @@
 export type GlovingTypogarphyProps = {
-	variant: "h1-glow" | "h1";
+	variant: "h1-glow" | "h1" | "footer";
 }

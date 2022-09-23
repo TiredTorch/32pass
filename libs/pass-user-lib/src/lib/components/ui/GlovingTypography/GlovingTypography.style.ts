@@ -1,9 +1,13 @@
 export const glovingTypographyStyles = {
 	root: {
+		fontSize: "2rem",
+		textShadow: "0px 0px 4px #39BEE7"
 	},
 	h1Glow: {
-		textShadow: "0px 0px 4px #39BEE7",
-		fontSize: "32px",
+		
 	},
 	h1: {},
+	footer: {
+		fontSize: "2vmax",
+	}
 };

@@ -6,6 +6,7 @@ import { Button, GlovingTypogarphy } from "../../ui";
 import { Avatar } from "../../ui/Avatar/Avatar";
 import { HeaderProps } from "./Header.types";
 import { headerStyles } from "./Header.styles";
+import { Button, GlovingTypography } from "../../ui";
 import logo from "../../../assets/icons/logo.svg";
 import darkLogo from "../../../assets/icons/darkLogo.svg";
 import { ReactComponent as House } from "../../../assets/icons/house.svg";
@@ -62,11 +63,11 @@ export const Header: FC<HeaderProps> = ({
 								src={logo}
 								alt="Logo"
 							/>
-							<GlovingTypogarphy variant={"h1-glow"}>Try TO Pass</GlovingTypogarphy>
+							<GlovingTypography variant={"h1-glow"}>Try TO Pass</GlovingTypography>
 						</Box>
 						<Box sx={headerStyles.authorizedBox}>
 							<Avatar source={avatarSource} />
-							<GlovingTypogarphy variant={"h1-glow"}>{userName}</GlovingTypogarphy>
+							<GlovingTypography variant={"h1-glow"}>{userName}</GlovingTypography>
 						</Box>
 						<Box sx={headerStyles.authorizedBox}>
 							<Button
@@ -83,7 +84,7 @@ export const Header: FC<HeaderProps> = ({
 								sx={headerStyles.authorizedExit}
 								onClick={handleExit}
 							>
-								<GlovingTypogarphy variant={"h1-glow"}>exit</GlovingTypogarphy>
+								<GlovingTypography variant={"h1-glow"}>exit</GlovingTypography>
 							</Box>
 						</Box>
 					</Box>
