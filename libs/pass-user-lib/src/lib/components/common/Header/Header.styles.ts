@@ -5,14 +5,18 @@ export const headerStyles = {
 		borderBottom: "2px solid black",
 		boxShadow: "0px 2px 8px 1px black",
 		padding: "0 5%",
+		display: "flex",
+		alignItems: "center",
+		flexDirection: "row",
 	},
 	unAuthorized: {
-		marginLeft: "2%",
+		/*[theme.breakpoints.up('sm')]: {
+			justifyContent: "center",
+		},*/
 	},
 	authorized: {
 		width: "100%",
 		display: "flex",
-		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
 	},
