@@ -1,13 +1,16 @@
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
+import { theme } from "@32pass/pass-user-lib";
 import AppRoutes from "../routes";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <CssBaseline/>
-      <AppRoutes />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <CssBaseline />
+        <AppRoutes />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };
 

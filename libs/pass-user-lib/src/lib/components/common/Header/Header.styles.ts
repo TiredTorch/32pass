@@ -1,3 +1,5 @@
+import { theme } from "../../../theme/theme";
+
 export const headerStyles = {
 	root: {
 		width: "100%",
@@ -10,9 +12,9 @@ export const headerStyles = {
 		flexDirection: "row",
 	},
 	unAuthorized: {
-		/*[theme.breakpoints.up('sm')]: {
-			justifyContent: "center",
-		},*/
+		[theme.breakpoints.down("md")]: {
+			display: "none"
+		}
 	},
 	authorized: {
 		width: "100%",
@@ -27,7 +29,7 @@ export const headerStyles = {
 		flexDirection: "row",
 		justifyContent: "center",
 		alignItems: "center",
-
+		gap: 1
 	},
 	authorizedExit: {
 		"&::before": {
@@ -42,5 +44,6 @@ export const headerStyles = {
 		display: "flex",
 		justifyContent: "space between",
 		alignItems: "center",
+		cursor: "pointer"
 	},
 };
