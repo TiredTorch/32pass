@@ -8,6 +8,6 @@ export const glovingTypographyStyles = {
 	},
 	h1: {},
 	footer: {
-		fontSize: "2vmax"
+		fontSize: "2vmax",
 	}
 };
