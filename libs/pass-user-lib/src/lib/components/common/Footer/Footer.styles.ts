@@ -10,6 +10,7 @@ export const footerStyles = {
 		flexFlow: "column",
 		alignItems: "center",
 		justifyContent: "center",
+		overflow: "hidden"
 	},
 	logoLinksSection: {
 		marginBottom: "1vmin",

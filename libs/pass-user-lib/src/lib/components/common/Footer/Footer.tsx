@@ -5,7 +5,6 @@ import {ReactComponent as LinkedInLogo } from "../../../assets/icons/linkedInLog
 import {ReactComponent as InstagramLogo } from "../../../assets/icons/instagramLogo.svg";
 import {ReactComponent as FacebookLogo } from "../../../assets/icons/facebookLogo.svg";
 import {ReactComponent as FigmaLogo } from "../../../assets/icons/figmaLogo.svg";
-import provided from "../../../assets/icons/provided.svg";
 import { Button, GlovingTypography } from "../../ui";
 
 export const Footer = () => {
