@@ -1,9 +1,10 @@
 import { FC } from "react";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import { HeaderProps } from "./Header.types";
 import { headerStyles } from "./Header.styles";
 import { Button, GlovingTypogarphy } from "../../ui";
 import logo from "../../../assets/icons/logo.svg";
+import darkLogo from "../../../assets/icons/darkLogo.svg";
 import { ReactComponent as House } from "../../../assets/icons/house.svg";
 import { ReactComponent as Book } from "../../../assets/icons/book.svg";
 import { Avatar } from "../../ui/Avatar/Avatar";
@@ -17,12 +18,18 @@ export const Header: FC<HeaderProps> = ({
 	userName
 }) => {
 	return (
-		<Box
+		<Box 
 			sx={headerStyles.root}
+			
 		>
 			{!isPrivate &&
 				<>
-
+					<Box
+						component={"img"}
+						src={darkLogo}
+						alt="Logo"
+						sx = {headerStyles.unAuthorized}
+					/>
 				</>}
 			{isPrivate &&
 				<>
@@ -32,7 +39,6 @@ export const Header: FC<HeaderProps> = ({
 								component={"img"}
 								src={logo}
 								alt="Logo"
-
 							/>
 							<GlovingTypogarphy variant={"h1-glow"}>Try TO Pass</GlovingTypogarphy>
 						</Box>
