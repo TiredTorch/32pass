@@ -53,6 +53,7 @@ export const buttonStyles = {
 	headerNavDisabled: {
 		width: "calc(3vmin + 8px)",
 		maxWidth: "calc(3vmin + 8px)",
+		minWidth: "0",
 		"& svg": {
 			width: "calc(3vmin)",
 			height: "calc(3vmin)",
