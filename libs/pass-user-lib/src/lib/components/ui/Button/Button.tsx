@@ -22,6 +22,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 				type === "blue-no-border" && buttonStyles.blueNoBorder,
 				type === "header-nav-enabled" && buttonStyles.headerNavEnabled,
 				type === "header-nav-disabled" && buttonStyles.headerNavDisabled,
+				type === "footer-link" && buttonStyles.footerLink,
 				sx as Record<string, unknown>,
 			]}
 			onClick={onClick}

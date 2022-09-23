@@ -58,4 +58,26 @@ export const buttonStyles = {
 			height: "calc(3vmin)",
 		}
 	},
+	footerLink: {
+		background: "white",
+		border: "1px solid black",
+		width: "13%",
+		
+		minWidth: "0",
+		aspectRatio: "1",
+		borderRadius: "50%",
+		margin: "0",
+		padding: "0",
+		"& svg": {
+			width: "70%",
+			height: "70%",
+		},
+		"&:hover": {
+			background: "#39BEE7",
+			boxShadow: "0px 0px 6px rgba(0, 0, 0, 0.75)",
+			"& svg": {
+				filter: "invert(99%) sepia(95%) saturate(0%) hue-rotate(63deg) brightness(103%) contrast(100%)",
+			}
+		}
+	}
 };
