@@ -3,15 +3,26 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
+    "start:pass-admin": "nx serve pass-admin --port=4201",
+    "start:pass-user": "nx serve pass-user --port=4200",
+    "run:many": "nx run-many --target=build --projects=pass-admin,pass-user --prod",
+    "build:pass-admin": "nx build pass-admin --skip-nx-cache --prod",
+    "build:pass-user": "nx build pass-user --skip-nx-cache --prod",
+    "test:all": "nx run-many --target=test --all --parallel=10 --maxParallel=10 --updateSnapshot --prod --skip-nx-cache --verbose",
+    "test:pass-admin": "nx test pass-admin --env=jsdom --watchAll --updateSnapshot",
+    "test:pass-user": "nx test pass-user --env=jsdom --watchAll --updateSnapshot"
   },
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.6",
     "core-js": "^3.6.5",
+    "firebase": "^9.10.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-firebase-hooks": "^5.0.3",
+    "react-router-dom": "^6.4.0",
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.3.0"
   },
