@@ -47,6 +47,7 @@ export const Header: FC<HeaderProps> = ({
 			{!isPrivate &&
 				<>
 					<Box
+						onClick={handleNavToHome}
 						component={"img"}
 						src={darkLogo}
 						alt="Logo"
@@ -62,11 +63,11 @@ export const Header: FC<HeaderProps> = ({
 								src={logo}
 								alt="Logo"
 							/>
-							<GlovingTypography variant={"h1-glow"}>Try TO Pass</GlovingTypography>
+							<GlovingTypography variant={"h3-glow"}>Try TO Pass</GlovingTypography>
 						</Box>
 						<Box sx={headerStyles.authorizedBox}>
 							<Avatar source={avatarSource} />
-							<GlovingTypography variant={"h1-glow"}>{userName}</GlovingTypography>
+							<GlovingTypography variant={"h3-glow"}>{userName}</GlovingTypography>
 						</Box>
 						<Box sx={headerStyles.authorizedBox}>
 							<Button
@@ -83,7 +84,7 @@ export const Header: FC<HeaderProps> = ({
 								sx={headerStyles.authorizedExit}
 								onClick={handleExit}
 							>
-								<GlovingTypography variant={"h1-glow"}>exit</GlovingTypography>
+								<GlovingTypography variant={"h3-glow"}>exit</GlovingTypography>
 							</Box>
 						</Box>
 					</Box>

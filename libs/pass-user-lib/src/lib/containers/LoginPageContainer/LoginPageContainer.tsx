@@ -2,10 +2,11 @@ import { useCallback } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Box } from "@mui/material";
 import { userAuth } from "@32pass/shared";
-import { LoginForm } from "../../components";
+import { GlovingTypography, LoginForm } from "../../components";
 import { ReactComponent as UnAuthLogo } from "../../assets/icons/unauthLogo.svg";
 import { FormLayout, PageLayout } from "../../layout";
 import { AppRouteEnum } from "../../types";
+import { Link } from "react-router-dom";
 
 export const LoginPageContainer = () => {
 
@@ -30,9 +31,24 @@ export const LoginPageContainer = () => {
 					handleAuth={handleAuthWithGoogle}
 				/>}
 				textContent={
-					<Box>
-						<UnAuthLogo />
-					</Box>
+					<>
+						<GlovingTypography
+							variant={"h1"}
+							sx={{
+								textAlign: "center"
+							}}
+						>
+							To begin your experience, log in or sign up
+						</GlovingTypography>
+						<Box>
+							<UnAuthLogo />
+						</Box>
+						<GlovingTypography variant={"h3"}>
+							Also, check information
+							{" "}
+							<Link to={AppRouteEnum.ABOUT}>about us</Link>
+						</GlovingTypography>
+					</>
 				}
 			/>
 		</PageLayout>

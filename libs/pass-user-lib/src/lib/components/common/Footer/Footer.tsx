@@ -36,7 +36,7 @@ export const Footer = () => {
 				/>
 			</Box>
 			<GlovingTypography
-				variant="footer"
+				variant="body1"
 			>
 				{"© Provided by P@z3t1ffff43k!_v_K3da)( in 2022"}
 			</GlovingTypography>

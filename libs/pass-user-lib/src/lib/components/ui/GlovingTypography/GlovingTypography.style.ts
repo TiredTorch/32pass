@@ -8,11 +8,17 @@ export const glovingTypographyStyles = {
 			transition: "text-shadow .2s"
 		}
 	},
-	h1Glow: {
+	h1: {
+		fontSize: "4rem"
+	},
+	h3Glow: {
 
 	},
-	h1: {},
-	footer: {
+	h3: {},
+	body1: {
 		fontSize: "2vmax",
+	},
+	body2: {
+		fontSize: "1.4vmax",
 	}
 };
