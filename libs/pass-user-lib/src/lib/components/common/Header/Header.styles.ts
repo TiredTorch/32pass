@@ -12,6 +12,7 @@ export const headerStyles = {
 		flexDirection: "row",
 	},
 	unAuthorized: {
+		cursor: "pointer",
 		[theme.breakpoints.down("md")]: {
 			display: "none"
 		}

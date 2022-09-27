@@ -25,7 +25,8 @@ export const formLayoutStyles = {
 		background: "#D9D9D9",
 		padding: "10px",
 		display: "flex",
-		justifyContent: "center",
+		flexDirection: "column",
+		justifyContent: "space-evenly",
 		alignItems: "center"
 	}
 };

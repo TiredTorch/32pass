@@ -3,6 +3,7 @@ import { lazy } from "react";
 
 const LoginPage = lazy(() => import("../pages/LoginPage"));
 const RegisterPage = lazy(() => import("../pages/RegisterPage"));
+const AboutPage = lazy(() => import("../pages/AboutPage"));
 
 export const commonRoutes = [
 	{
@@ -13,6 +14,11 @@ export const commonRoutes = [
 	{
 		element: <RegisterPage />,
 		path: AppRouteEnum.REGISTER,
+		isAuth: false
+	},
+	{
+		element: <AboutPage />,
+		path: AppRouteEnum.ABOUT,
 		isAuth: false
 	}
 ];
