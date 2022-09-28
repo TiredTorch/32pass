@@ -37,5 +37,8 @@ export const glovingTypographyStyles = {
 		"&:hover": {
 			textShadow: "none",
 		}
+	},
+	footer: {
+		fontSize: "calc(1.1vmax + 5px)",
 	}
 };

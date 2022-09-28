@@ -18,6 +18,7 @@ export const GlovingTypography: FC<
 				variant === "body2" && glovingTypographyStyles.body2,
 				variant === "body3" && glovingTypographyStyles.body3,
 				variant === "body4" && glovingTypographyStyles.body4,
+				variant === "footer" && glovingTypographyStyles.footer,
 				sx as unknown as Record<string, unknown>
 			]}
 		>
