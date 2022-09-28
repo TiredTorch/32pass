@@ -5,14 +5,16 @@ export const headerStyles = {
 		borderBottom: "2px solid black",
 		boxShadow: "0px 2px 8px 1px black",
 		padding: "0 5%",
+		display: "flex",
+		alignItems: "center",
+		flexDirection: "row",
 	},
 	unAuthorized: {
-		marginLeft: "2%",
+		cursor: "pointer"
 	},
 	authorized: {
 		width: "100%",
 		display: "flex",
-		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
 	},
@@ -23,7 +25,7 @@ export const headerStyles = {
 		flexDirection: "row",
 		justifyContent: "center",
 		alignItems: "center",
-
+		gap: 1
 	},
 	authorizedExit: {
 		"&::before": {
@@ -38,5 +40,6 @@ export const headerStyles = {
 		display: "flex",
 		justifyContent: "space between",
 		alignItems: "center",
+		cursor: "pointer"
 	},
 };

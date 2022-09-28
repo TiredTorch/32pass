@@ -7,7 +7,7 @@ export const LibraryPageContainer = () => {
 			currentPage={AppRouteEnum.LIBRARY}
 			isPrivate
 		>
-			Library
+			liba
 		</PageLayout>
 	);
 };

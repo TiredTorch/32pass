@@ -1,13 +1,15 @@
-import { FC } from "react";
+import { FC, useCallback } from "react";
 import { Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { AppRouteEnum } from "../../../types/enums/paths";
+import { Button, GlovingTypography } from "../../ui";
+import { Avatar } from "../../ui/Avatar/Avatar";
 import { HeaderProps } from "./Header.types";
 import { headerStyles } from "./Header.styles";
-import { Button, GlovingTypography } from "../../ui";
 import logo from "../../../assets/icons/logo.svg";
+import darkLogo from "../../../assets/icons/darkLogo.svg";
 import { ReactComponent as House } from "../../../assets/icons/house.svg";
 import { ReactComponent as Book } from "../../../assets/icons/book.svg";
-import { Avatar } from "../../ui/Avatar/Avatar";
-import { AppRouteEnum } from "../../../types/enums/paths";
 
 export const Header: FC<HeaderProps> = ({
 	isPrivate,
@@ -16,13 +18,42 @@ export const Header: FC<HeaderProps> = ({
 	handleExit,
 	userName
 }) => {
+	const navigate = useNavigate();
+
+	const handleNavToHome = useCallback(
+		() => {
+			navigate(AppRouteEnum.HOME);
+		},
+		[],
+	);
+
+	const handleNavToLib = useCallback(
+		() => {
+			navigate(AppRouteEnum.LIBRARY);
+		},
+		[],
+	);
+
 	return (
 		<Box
-			sx={headerStyles.root}
+			sx={[
+				headerStyles.root,
+				{
+					background: isPrivate ? "" : "white"
+				}
+			]}
+
 		>
 			{!isPrivate &&
 				<>
-
+					<Box
+						data-cy="unauth-header-home-button"
+						onClick={handleNavToHome}
+						component={"img"}
+						src={darkLogo}
+						alt="Logo"
+						sx={headerStyles.unAuthorized}
+					/>
 				</>}
 			{isPrivate &&
 				<>
@@ -32,20 +63,21 @@ export const Header: FC<HeaderProps> = ({
 								component={"img"}
 								src={logo}
 								alt="Logo"
-
 							/>
-							<GlovingTypography variant={"h1-glow"}>Try TO Pass</GlovingTypography>
+							<GlovingTypography variant={"h3-glow"}>Try TO Pass</GlovingTypography>
 						</Box>
 						<Box sx={headerStyles.authorizedBox}>
 							<Avatar source={avatarSource} />
-							<GlovingTypography variant={"h1-glow"}>{userName}</GlovingTypography>
+							<GlovingTypography variant={"h3-glow"}>{userName}</GlovingTypography>
 						</Box>
 						<Box sx={headerStyles.authorizedBox}>
 							<Button
+								onClick={handleNavToHome}
 								type={currentPage === AppRouteEnum.HOME ? "header-nav-enabled" : "header-nav-disabled"}
 								icon={<House />}
 							/>
 							<Button
+								onClick={handleNavToLib}
 								type={currentPage === AppRouteEnum.LIBRARY ? "header-nav-enabled" : "header-nav-disabled"}
 								icon={<Book />}
 							/>
@@ -53,7 +85,7 @@ export const Header: FC<HeaderProps> = ({
 								sx={headerStyles.authorizedExit}
 								onClick={handleExit}
 							>
-								<GlovingTypography variant={"h1-glow"}>exit</GlovingTypography>
+								<GlovingTypography variant={"h3-glow"}>exit</GlovingTypography>
 							</Box>
 						</Box>
 					</Box>

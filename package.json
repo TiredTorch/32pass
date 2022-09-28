@@ -4,13 +4,15 @@
   "license": "MIT",
   "scripts": {
     "start:pass-admin": "nx serve pass-admin --port=4201",
-    "start:pass-user": "nx serve pass-user --port=4200",
+    "start:pass-user": "nx serve pass-user --port=4202",
     "run:many": "nx run-many --target=build --projects=pass-admin,pass-user --prod",
     "build:pass-admin": "nx build pass-admin --skip-nx-cache --prod",
     "build:pass-user": "nx build pass-user --skip-nx-cache --prod",
     "test:all": "nx run-many --target=test --all --parallel=10 --maxParallel=10 --updateSnapshot --prod --skip-nx-cache --verbose",
     "test:pass-admin": "nx test pass-admin --env=jsdom --watchAll --updateSnapshot",
-    "test:pass-user": "nx test pass-user --env=jsdom --watchAll --updateSnapshot"
+    "test:pass-user": "nx test pass-user --env=jsdom --watchAll --updateSnapshot",
+    "e2e:pass-user": "nx e2e pass-user-e2e",
+    "e2e:pass-user:watch": "nx e2e pass-user-e2e --watch"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-firebase-hooks": "^5.0.3",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.4.0",
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.3.0"

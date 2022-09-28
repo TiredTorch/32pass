@@ -4,5 +4,6 @@ export const enum AppRouteEnum {
 	HOME = "/",
 	PROPOSAL = "/proposal",
 	LIBRARY = "/lib",
-	CHALLENGE = "/challenge/:clgId"
+	CHALLENGE = "/challenge/:clgId",
+	ABOUT= "/about"
 }
