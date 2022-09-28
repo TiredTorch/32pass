@@ -75,7 +75,7 @@ export const Header: FC<HeaderProps> = ({
 						</Box>
 						<Box sx={[headerStyles.authorizedBox, headerStyles.hideWhenNotLarge]}>
 							<Avatar
-								source={avatarSource} 
+								source={avatarSource}
 								hideWhenLarge={false}
 							/>
 							<GlovingTypography variant={"h3-glow"}>{userName}</GlovingTypography>
@@ -99,7 +99,7 @@ export const Header: FC<HeaderProps> = ({
 									source={avatarSource}
 									hideWhenLarge={true}
 								/>
-								<GlovingTypography variant={"h3-glow"}>exit</GlovingTypography>
+								<GlovingTypography variant={"h4-glow"}>Exit</GlovingTypography>
 							</Box>
 						</Box>
 					</Box>

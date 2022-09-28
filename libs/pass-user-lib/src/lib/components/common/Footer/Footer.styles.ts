@@ -3,7 +3,7 @@ export const footerStyles = {
 		width: "100%",
 		height: "110px",
 		background: "white",
-		position: "absolute",
+		position: "sticky",
 		bottom: "0",
 		left: "0",
 		display: "flex",

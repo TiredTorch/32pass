@@ -68,6 +68,7 @@ export const headerStyles = {
 		gap: 2,
 		[theme.breakpoints.down("sm")] : {
 			gap: 0.5,
+			marginRight: "-30px"
 		},
 	},
 	hideWhenNotLarge: {

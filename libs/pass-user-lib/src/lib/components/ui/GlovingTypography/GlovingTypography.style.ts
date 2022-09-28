@@ -14,6 +14,9 @@ export const glovingTypographyStyles = {
 	h3Glow: {
 
 	},
+	h4Glow: {
+		fontSize: "calc(2vmax + 10px)"
+	},
 	h3: {
 		fontSize: "calc(2vmax + 10px)"
 	},

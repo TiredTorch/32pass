@@ -12,6 +12,7 @@ export const GlovingTypography: FC<
 			sx={[
 				glovingTypographyStyles.root,
 				variant === "h3-glow" && glovingTypographyStyles.h3Glow,
+				variant === "h4-glow" && glovingTypographyStyles.h4Glow,
 				variant === "h1" && glovingTypographyStyles.h1,
 				variant === "h3" && glovingTypographyStyles.h3,
 				variant === "body1" && glovingTypographyStyles.body1,
