@@ -36,13 +36,23 @@ export const RegisterPageContainer = () => {
 						>
 							To begin your experience, log in or sign up
 						</GlovingTypography>
-						<Box>	
+						<Box>
 							<UnAuthLogo />
 						</Box>
-						<GlovingTypography variant={"h3"}>
+						<GlovingTypography
+							variant={"h3"}
+							sx={{
+								textAlign: "center"
+							}}
+						>
 							Also, check information
 							{" "}
-							<Link to={AppRouteEnum.ABOUT}>about us</Link>
+							<Link
+								data-cy="about-link"
+								to={AppRouteEnum.ABOUT}
+							>
+								about us
+							</Link>
 						</GlovingTypography>
 					</>
 				}

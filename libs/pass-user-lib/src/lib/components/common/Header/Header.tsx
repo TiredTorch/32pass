@@ -47,6 +47,7 @@ export const Header: FC<HeaderProps> = ({
 			{!isPrivate &&
 				<>
 					<Box
+						data-cy="unauth-header-home-button"
 						onClick={handleNavToHome}
 						component={"img"}
 						src={darkLogo}

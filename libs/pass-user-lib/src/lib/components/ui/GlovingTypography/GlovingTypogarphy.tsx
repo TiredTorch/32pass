@@ -5,9 +5,10 @@ import { GlovingTypogarphyProps } from "./GlovingTypography.types";
 
 export const GlovingTypography: FC<
 	PropsWithChildren<GlovingTypogarphyProps>
-> = ({ children, variant, sx }) => {
+> = ({ children, variant, sx, dataCy }) => {
 	return (
 		<Typography
+			data-cy={dataCy}
 			sx={[
 				glovingTypographyStyles.root,
 				variant === "h3-glow" && glovingTypographyStyles.h3Glow,
