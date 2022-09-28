@@ -1,5 +1,3 @@
-import { theme } from "../../../theme/theme";
-
 export const headerStyles = {
 	root: {
 		width: "100%",
@@ -12,10 +10,7 @@ export const headerStyles = {
 		flexDirection: "row",
 	},
 	unAuthorized: {
-		cursor: "pointer",
-		[theme.breakpoints.down("md")]: {
-			display: "none"
-		}
+		cursor: "pointer"
 	},
 	authorized: {
 		width: "100%",

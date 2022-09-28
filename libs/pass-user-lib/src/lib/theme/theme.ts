@@ -15,7 +15,11 @@ theme.components = {
 					maxHeight: "100vh",
 					minWidth: "100vw",
 					maxWidth: "100vw",
-					overflow: "hidden"
+					overflow: "hidden",
+					[theme.breakpoints.down("md")]: {
+						flexDirection: "column",
+						overflowY: "auto"
+					}
 				},
 			}
 		}

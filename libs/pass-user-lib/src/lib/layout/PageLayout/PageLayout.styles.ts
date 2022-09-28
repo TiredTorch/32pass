@@ -5,7 +5,6 @@ export const pageLayoutStyles = {
 		minWidth: "100vw",
 		maxWidth: "100vw",
 		minHeight: "100vh",
-		maxHeight: "100vh",
 		backgroundImage: `url(${background})`,
 		backgroundPosition: "center",
 		backgroundSize: "cover"
