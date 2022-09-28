@@ -22,5 +22,8 @@ export const glovingTypographyStyles = {
 	},
 	body2: {
 		fontSize: "calc(1.1vmax + 7px)",
+	},
+	footer: {
+		fontSize: "calc(1.1vmax + 5px)",
 	}
 };

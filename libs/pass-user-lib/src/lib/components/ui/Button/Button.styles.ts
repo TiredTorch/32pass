@@ -35,36 +35,41 @@ export const buttonStyles = {
 	headerNavEnabled: {
 		background: "white",
 		borderRadius: "50%",
-		width: "calc(3vmin + 8px)",
+		width: "calc(2vmax + 8px)",
 		aspectRatio: "1",
-		minWidth: "0",
+		minWidth: "40px",
 		minHeight: "0",
-		maxWidth: "calc(3vmin + 8px)",
+		maxWidth: "calc(2vmax + 8px)",
 		margin: "0",
 		padding: "0",
 		"& svg": {
-			width: "calc(3vmin)",
-			height: "calc(3vmin)",
+			width: "80%",
+			height: "80%",
 		},
 		"&:hover": {
 			background: "white"
 		}
 	},
 	headerNavDisabled: {
-		width: "calc(3vmin + 8px)",
-		maxWidth: "calc(3vmin + 8px)",
-		minWidth: "0",
+		width: "calc(2vmax + 8px)",
+		aspectRatio: "1",
+		minWidth: "40px",
+		minHeight: "0",
+		maxWidth: "calc(2vmax + 8px)",
+		margin: "0",
+		padding: "0",
 		"& svg": {
-			width: "calc(3vmin)",
-			height: "calc(3vmin)",
-		}
+			width: "80%",
+			height: "80%",
+		},
 	},
 	footerLink: {
 		background: "white",
-		border: "1px solid black",
-		width: "13%",
-
-		minWidth: "0",
+		border: "2px solid black",
+		width: "12%",
+		boxSizing: "border-box",
+		minWidth: "45px",
+		maxWidth: "60px",
 		aspectRatio: "1",
 		borderRadius: "50%",
 		margin: "0",
