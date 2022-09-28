@@ -1,16 +1,24 @@
 import aboutBg from "../../assets/images/aboutBg.jpg";
+import { theme } from "../../theme/theme";
 
 export const aboutPageContainerStyles = {
 	root: {
 		background: `url(${aboutBg})`,
 		filter: "sepia(90%)",
 		height: "100vh",
+		minHeight: "100vh",
 		width: "100%",
 		backgroundSize: "cover",
 		backgroundPosition: "center",
 		display: "flex",
 		justifyContent: "space-around",
-		padding: "30px 0"
+		padding: "20px 30px 0px",
+
+		[theme.breakpoints.down("md")]: {
+			flexDirection: "column",
+			alignItems: "center",
+			padding: "130px 0px 120px",
+		}
 	},
 	imgContainer: {
 		width: "40%",
@@ -30,23 +38,29 @@ export const aboutPageContainerStyles = {
 			"& .carousel.carousel-slider": {
 				height: "100%"
 			},
+		},
+
+		[theme.breakpoints.down("md")]: {
+			width: "90%",
+			minHeight: "100%"
 		}
 	},
 	textContainer: {
 		display: "flex",
 		width: "40%",
-		flexDirection: "column"
-	},
-	container: {
-		width: "100%",
-		height: "100%",
-		background: "red"
+		flexDirection: "column",
+		[theme.breakpoints.down("md")]: {
+			width: "90%"
+		}
 	},
 	img: {
 		width: "100%",
 		height: "80%",
 		backgroundSize: "cover",
 		borderRadius: "5%",
+		[theme.breakpoints.down("md")]: {
+			marginTop: "10px"
+		}
 	},
 	imgText: {
 		width: "100%",
@@ -69,6 +83,9 @@ export const aboutPageContainerStyles = {
 		aspectRatio: "1",
 		backgroundSize: "cover",
 		backgroundPosition: "center",
-		borderRadius: "1%"
+		borderRadius: "1%",
+		[theme.breakpoints.down("md")]: {
+			width: "80%",
+		}
 	}
 };

@@ -11,7 +11,7 @@ export const buttonStyles = {
 		height: "40px",
 		color: "#707375",
 		fontWeight: "700",
-		fontSize: "16px",
+		fontSize: "calc(.5vmax + 8px)",
 		width: "50%",
 		"&:hover": {
 			boxShadow: "2px 2px 2px rgba(9, 30, 63, 0.5)",
@@ -63,7 +63,7 @@ export const buttonStyles = {
 		background: "white",
 		border: "1px solid black",
 		width: "13%",
-		
+
 		minWidth: "0",
 		aspectRatio: "1",
 		borderRadius: "50%",

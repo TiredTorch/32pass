@@ -9,16 +9,18 @@ export const glovingTypographyStyles = {
 		}
 	},
 	h1: {
-		fontSize: "4rem"
+		fontSize: "calc(3vmax + 10px)"
 	},
 	h3Glow: {
 
 	},
-	h3: {},
+	h3: {
+		fontSize: "calc(2vmax + 10px)"
+	},
 	body1: {
-		fontSize: "2vmax",
+		fontSize: "calc(2.2vmax + 10px)",
 	},
 	body2: {
-		fontSize: "1.4vmax",
+		fontSize: "calc(1.1vmax + 7px)",
 	}
 };

@@ -1,5 +1,7 @@
+import { Box } from "@mui/material";
 import { PageLayout } from "../../layout";
 import { AppRouteEnum } from "../../types";
+import { homePageContainerStyles } from "./HomePageContainer.styles";
 
 export const HomePageContainer = () => {
 	return (
@@ -7,7 +9,11 @@ export const HomePageContainer = () => {
 			isPrivate
 			currentPage={AppRouteEnum.HOME}
 		>
-			aboba
+			<Box
+				sx={homePageContainerStyles.root}
+			>
+				aaa
+			</Box>
 		</PageLayout>
 	);
 };
