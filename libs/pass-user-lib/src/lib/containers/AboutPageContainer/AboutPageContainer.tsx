@@ -15,11 +15,17 @@ export const AboutPageContainer = () => {
 		>
 			<Box
 				sx={aboutPageContainerStyles.root}
+				data-cy="about-root"
 			>
 				<Box
 					sx={aboutPageContainerStyles.textContainer}
 				>
-					<GlovingTypography variant={"body1"}>About resourse</GlovingTypography>
+					<GlovingTypography
+						variant={"body1"}
+						dataCy="res-title"
+					>
+						About resourse
+					</GlovingTypography>
 					<GlovingTypography
 						variant={"body2"}
 					>
@@ -41,7 +47,13 @@ export const AboutPageContainer = () => {
 				<Box
 					sx={aboutPageContainerStyles.imgContainer}
 				>
-					<GlovingTypography variant={"body1"}>Creators & developers</GlovingTypography>
+					<GlovingTypography
+						variant={"body1"}
+						dataCy="creat-title"
+					>
+						Creators & developers
+
+					</GlovingTypography>
 					<Carousel
 						autoPlay
 						infiniteLoop

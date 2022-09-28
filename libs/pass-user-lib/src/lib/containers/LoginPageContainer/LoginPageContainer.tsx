@@ -51,7 +51,13 @@ export const LoginPageContainer = () => {
 						>
 							Also, check information
 							{" "}
-							<Link to={AppRouteEnum.ABOUT}>about us</Link>
+							<Link
+								to={AppRouteEnum.ABOUT}
+								data-cy="about-link"
+							>
+								about us
+
+							</Link>
 						</GlovingTypography>
 					</>
 				}
