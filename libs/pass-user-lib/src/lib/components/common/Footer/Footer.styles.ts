@@ -1,7 +1,7 @@
 export const footerStyles = {
 	root: {
 		width: "100%",
-		height: "160px",
+		height: "110px",
 		background: "white",
 		position: "absolute",
 		bottom: "0",
