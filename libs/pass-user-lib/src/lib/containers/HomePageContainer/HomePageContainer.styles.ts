@@ -2,7 +2,7 @@ import { theme } from "../../theme/theme";
 
 export const homePageContainerStyles = {
 	root: {
-		paddingTop: "20px",
+		paddingTop: "15px",
 		display: "flex",
 		justifyContent: "space-between",
 		[theme.breakpoints.down("md")]: {
