@@ -14,13 +14,34 @@ export const glovingTypographyStyles = {
 	h3Glow: {
 
 	},
+	h4Glow: {
+		fontSize: "calc(2vmax + 10px)"
+	},
 	h3: {
 		fontSize: "calc(2vmax + 10px)"
 	},
 	body1: {
 		fontSize: "calc(2.2vmax + 10px)",
+		textShadow: "none"
 	},
 	body2: {
 		fontSize: "calc(1.1vmax + 7px)",
+		textShadow: "none"
+	},
+	body3: {
+		fontSize: "calc(1vmax + 6px)",
+		textShadow: "none"
+	},
+	body4: {
+		fontSize: "calc(.6vmax + 6px)",
+		textShadow: "none",
+		color: "#707070",
+		textAlign: "center",
+		"&:hover": {
+			textShadow: "none",
+		}
+	},
+	footer: {
+		fontSize: "calc(1.1vmax + 5px)",
 	}
 };

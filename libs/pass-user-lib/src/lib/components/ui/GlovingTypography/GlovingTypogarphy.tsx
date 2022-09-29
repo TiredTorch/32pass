@@ -12,10 +12,14 @@ export const GlovingTypography: FC<
 			sx={[
 				glovingTypographyStyles.root,
 				variant === "h3-glow" && glovingTypographyStyles.h3Glow,
+				variant === "h4-glow" && glovingTypographyStyles.h4Glow,
 				variant === "h1" && glovingTypographyStyles.h1,
 				variant === "h3" && glovingTypographyStyles.h3,
 				variant === "body1" && glovingTypographyStyles.body1,
 				variant === "body2" && glovingTypographyStyles.body2,
+				variant === "body3" && glovingTypographyStyles.body3,
+				variant === "body4" && glovingTypographyStyles.body4,
+				variant === "footer" && glovingTypographyStyles.footer,
 				sx as unknown as Record<string, unknown>
 			]}
 		>

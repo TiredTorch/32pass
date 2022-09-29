@@ -45,16 +45,18 @@ export const Header: FC<HeaderProps> = ({
 
 		>
 			{!isPrivate &&
-				<>
+				<Box
+					sx={headerStyles.unAuthorizedCon}
+				>
 					<Box
 						data-cy="unauth-header-home-button"
 						onClick={handleNavToHome}
 						component={"img"}
 						src={darkLogo}
 						alt="Logo"
-						sx={headerStyles.unAuthorized}
+						sx={headerStyles.unAuthorizedLogo}
 					/>
-				</>}
+				</Box>}
 			{isPrivate &&
 				<>
 					<Box sx={headerStyles.authorized}>
@@ -64,17 +66,25 @@ export const Header: FC<HeaderProps> = ({
 								src={logo}
 								alt="Logo"
 							/>
-							<GlovingTypography variant={"h3-glow"}>Try TO Pass</GlovingTypography>
+							<GlovingTypography
+								sx={headerStyles.hideWhenSmall}
+								variant={"h3-glow"}
+							>
+								Try TO Pass
+							</GlovingTypography>
 						</Box>
-						<Box sx={headerStyles.authorizedBox}>
-							<Avatar source={avatarSource} />
+						<Box sx={[headerStyles.authorizedBox, headerStyles.hideWhenNotLarge]}>
+							<Avatar
+								source={avatarSource}
+								hideWhenLarge={false}
+							/>
 							<GlovingTypography variant={"h3-glow"}>{userName}</GlovingTypography>
 						</Box>
-						<Box sx={headerStyles.authorizedBox}>
+						<Box sx={[headerStyles.authorizedBox, headerStyles.boxWhenSmall]}>
 							<Button
 								onClick={handleNavToHome}
 								type={currentPage === AppRouteEnum.HOME ? "header-nav-enabled" : "header-nav-disabled"}
-								icon={<House />}
+								icon={<House style={{ cursor: "pointer" }} />}
 							/>
 							<Button
 								onClick={handleNavToLib}
@@ -85,7 +95,11 @@ export const Header: FC<HeaderProps> = ({
 								sx={headerStyles.authorizedExit}
 								onClick={handleExit}
 							>
-								<GlovingTypography variant={"h3-glow"}>exit</GlovingTypography>
+								<Avatar
+									source={avatarSource}
+									hideWhenLarge={true}
+								/>
+								<GlovingTypography variant={"h4-glow"}>Exit</GlovingTypography>
 							</Box>
 						</Box>
 					</Box>

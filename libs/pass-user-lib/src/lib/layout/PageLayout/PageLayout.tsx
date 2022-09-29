@@ -25,7 +25,9 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
 		<>
 			{!loading && (
 				<Box
-					sx={pageLayoutStyles.root}
+					sx={[
+						pageLayoutStyles.root,
+					]}
 				>
 					<Header
 						isPrivate={!!isPrivate}

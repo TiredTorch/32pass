@@ -1,9 +1,9 @@
 export const footerStyles = {
 	root: {
 		width: "100%",
-		height: "160px",
+		height: "110px",
 		background: "white",
-		position: "absolute",
+		position: "sticky",
 		bottom: "0",
 		left: "0",
 		display: "flex",
@@ -13,11 +13,11 @@ export const footerStyles = {
 		overflow: "hidden"
 	},
 	logoLinksSection: {
-		marginBottom: "1vmin",
+		marginBottom: "2px",
 		display: "flex",
 		flexFlow: "row",
 		justifyContent: "space-around",
 		alignItems: "center",
-		width: "calc(40vmax - 10vmin)",
+		width: "calc(30vmax + 50px)",
 	}
 };
