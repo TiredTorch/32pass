@@ -9,16 +9,20 @@ export const headerStyles = {
 		display: "flex",
 		alignItems: "center",
 		flexDirection: "row",
+		padding: "0 20px",
+		[theme.breakpoints.down("md")]: {
+			padding: "0",
+		},
 	},
 	unAuthorizedCon: {
-		[theme.breakpoints.down("md")] : {
+		[theme.breakpoints.down("md")]: {
 			justifyContent: "center",
 			height: "95%"
 		},
 		width: "100%",
 		display: "flex",
 	},
-	unAuthorizedLogo : {
+	unAuthorizedLogo: {
 		cursor: "pointer",
 	},
 	authorized: {
@@ -26,7 +30,7 @@ export const headerStyles = {
 		display: "flex",
 		justifyContent: "space-between",
 		alignItems: "center",
-		[theme.breakpoints.down("sm")] : {
+		[theme.breakpoints.down("sm")]: {
 			justifyContent: "start",
 		},
 	},
@@ -38,15 +42,15 @@ export const headerStyles = {
 		justifyContent: "center",
 		alignItems: "center",
 		gap: 1,
-		[theme.breakpoints.down("lg")] : {
+		[theme.breakpoints.down("lg")]: {
 			width: "45%"
 		},
-		[theme.breakpoints.down("sm")] : {
+		[theme.breakpoints.down("sm")]: {
 			width: "20%",
 		},
 	},
 	boxWhenSmall: {
-		[theme.breakpoints.down("sm")] : {
+		[theme.breakpoints.down("sm")]: {
 			width: "80%",
 		},
 	},
@@ -66,19 +70,19 @@ export const headerStyles = {
 		alignItems: "center",
 		cursor: "pointer",
 		gap: 2,
-		[theme.breakpoints.down("sm")] : {
+		[theme.breakpoints.down("sm")]: {
 			gap: 0.5,
 			marginRight: "-30px"
 		},
 	},
 	hideWhenNotLarge: {
-		[theme.breakpoints.down("lg")] : {
-			display : "none"
+		[theme.breakpoints.down("lg")]: {
+			display: "none"
 		}
 	},
 	hideWhenSmall: {
-		[theme.breakpoints.down("sm")] : {
-			display : "none"
+		[theme.breakpoints.down("sm")]: {
+			display: "none"
 		}
 	},
 };
