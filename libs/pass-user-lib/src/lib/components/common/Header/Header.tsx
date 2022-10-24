@@ -50,6 +50,7 @@ export const Header: FC<HeaderProps> = ({
 				>
 					<Box
 						data-cy="unauth-header-home-button"
+						referrerPolicy="no-referrer"
 						onClick={handleNavToHome}
 						component={"img"}
 						src={darkLogo}
