@@ -17,7 +17,9 @@
         "tsConfig": "apps/pass-user/tsconfig.app.json",
         "assets": [
           "apps/pass-user/src/favicon.ico",
-          "apps/pass-user/src/assets"
+          "apps/pass-user/src/assets",
+          "apps/pass-user/src/sw.js",
+          "apps/pass-user/src/manifest.json"
         ],
         "styles": ["apps/pass-user/src/styles.scss"],
         "scripts": [],

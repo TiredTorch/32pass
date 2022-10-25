@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export const LoginPageContainer = () => {
 
-	const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(userAuth);
+	const [signInWithGoogle] = useSignInWithGoogle(userAuth);
 
 	const handleAuthWithGoogle = useCallback(
 		() => {
@@ -18,9 +18,6 @@ export const LoginPageContainer = () => {
 		},
 		[signInWithGoogle],
 	);
-	console.log(user);
-	console.log(loading);
-	console.log(error);
 
 	return (
 		<PageLayout
