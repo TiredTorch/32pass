@@ -17,7 +17,7 @@ const ChallangesList: FC<ChallangesListProps> = ({
 			sx={challangesListStyles.root}
 		>
 			<GlovingTypography
-				variant="body1"
+				variant="h1"
 				sx={challangesListStyles.title}
 			>
 				{listPreset.title}
@@ -25,11 +25,11 @@ const ChallangesList: FC<ChallangesListProps> = ({
 			<Box
 				sx={challangesListStyles.descriptionWrapper}
 			>
-				<Box><GlovingTypography variant={"body2"}>Game name</GlovingTypography></Box>
-				<Box><GlovingTypography variant={"body2"}>Challenge text</GlovingTypography></Box>
+				<Box><GlovingTypography variant="h3-glow">Game name</GlovingTypography></Box>
+				<Box><GlovingTypography variant="h3-glow">Challenge text</GlovingTypography></Box>
 				{sectionStatus === ChallangeStatus.DONE &&
 					<Box>
-						<GlovingTypography variant={"body2"}>Hard rate</GlovingTypography>
+						<GlovingTypography variant="h3-glow">Hard rate</GlovingTypography>
 					</Box>
 				}
 			</Box>
