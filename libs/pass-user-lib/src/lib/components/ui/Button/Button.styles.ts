@@ -85,5 +85,17 @@ export const buttonStyles = {
 				filter: "invert(99%) sepia(95%) saturate(0%) hue-rotate(63deg) brightness(103%) contrast(100%)",
 			}
 		}
+	},
+	notFound: {
+		width: "30vh",
+		height: "5vh",
+		background: "#D9D9D9",
+		filter: "drop-shadow(0px 4px 4px #000000)",
+		textAlign: "center",
+		color: "black",
+		textTransform: "none",
+		"&:hover": {
+			background: "#E1E1E1",
+		}
 	}
 };

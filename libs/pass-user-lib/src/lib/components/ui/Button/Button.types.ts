@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { ButtonProps as MuiButtonProps } from "@mui/material";
 
 export type ButtonProps = Pick<MuiButtonProps, "sx"> & {
-	type: "white-shadow" | "blue-no-border" | "blue-border" | "header-nav-disabled" | "header-nav-enabled" | "footer-link";
+	type: "white-shadow" | "blue-no-border" | "blue-border" | "header-nav-disabled" | "header-nav-enabled" | "footer-link" | "not-found";
 	icon?: ReactNode;
 	onClick?: () => void;
 	

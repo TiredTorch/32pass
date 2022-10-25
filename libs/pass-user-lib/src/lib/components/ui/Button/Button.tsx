@@ -23,6 +23,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 				type === "header-nav-enabled" && buttonStyles.headerNavEnabled,
 				type === "header-nav-disabled" && buttonStyles.headerNavDisabled,
 				type === "footer-link" && buttonStyles.footerLink,
+				type === "not-found" && buttonStyles.notFound,
 				sx as Record<string, unknown>,
 			]}
 			onClick={onClick}

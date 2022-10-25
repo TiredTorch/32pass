@@ -10,7 +10,7 @@ export const PublicRoute: FC<PropsWithChildren> = ({
 	const location = useLocation();
 	const [user, loading] = useAuthState(userAuth);
 
-	if (user) {
+	if (user && !loading) {
 		return (
 			<Navigate
 				to={AppRouteEnum.HOME}
