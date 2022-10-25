@@ -7,6 +7,9 @@ export const pageLayoutStyles = {
 		minHeight: "100vh",
 		backgroundImage: `url(${background})`,
 		backgroundPosition: "center",
-		backgroundSize: "cover"
+		backgroundSize: "cover",
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "space-between"
 	}
 };

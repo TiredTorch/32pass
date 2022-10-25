@@ -12,7 +12,8 @@ export const Input: FC<TextFieldProps> = ({
 		<TextField
 			{...rest}
 			sx={[
-				inputStyles.root
+				inputStyles.root,
+				sx as Record<string, unknown>
 			]}
 			variant="outlined"
 			value={value}

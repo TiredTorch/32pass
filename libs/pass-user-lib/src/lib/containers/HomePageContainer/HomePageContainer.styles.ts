@@ -15,14 +15,12 @@ export const homePageContainerStyles = {
 		gap: 4,
 		alignItems: "center",
 		width: "60%",
-		height: "100vh",
 		[theme.breakpoints.down("md")]: {
 			width: "100%"
 		}
 
 	},
 	rightWrapper: {
-		height: "100vh",
 		width: "40%",
 		display: "flex",
 		flexDirection: "column",

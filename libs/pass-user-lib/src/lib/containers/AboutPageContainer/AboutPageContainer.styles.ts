@@ -5,8 +5,8 @@ export const aboutPageContainerStyles = {
 	root: {
 		background: `url(${aboutBg})`,
 		filter: "sepia(90%)",
-		height: "100vh",
-		minHeight: "100vh",
+		height: "calc(100vh - 100px)",
+		minHeight: "calc(100vh - 100px)",
 		width: "100%",
 		backgroundSize: "cover",
 		backgroundPosition: "center",
