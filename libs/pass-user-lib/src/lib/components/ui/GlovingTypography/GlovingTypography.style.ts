@@ -51,5 +51,23 @@ export const glovingTypographyStyles = {
 		"&:hover": {
 			textShadow: "0px 4px 4px #000000",
 		}
+	},
+	gameName: {
+		color: "black",
+		textShadow: "0px 4px 4px rgba(0,0,0,0.75)",
+		"-webkit-text-stroke": "1px #39BEE7",
+		fontSize: "3vw",
+		"&:hover": {
+			textShadow: "0px 4px 4px rgba(0,0,0,0.75)",
+		}
+	},
+	challengeName: {
+		color: "#39BEE7",
+		"-webkit-text-stroke": "1px black",
+		textShadow: "none",
+		fontSize: "1.7vw",
+		"&:hover": {
+			textShadow: "none",
+		}
 	}
 };

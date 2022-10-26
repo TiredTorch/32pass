@@ -21,6 +21,8 @@ export const GlovingTypography: FC<
 				variant === "body4" && glovingTypographyStyles.body4,
 				variant === "footer" && glovingTypographyStyles.footer,
 				variant === "not-found" && glovingTypographyStyles.notFound,
+				variant === "game-name" && glovingTypographyStyles.gameName,
+				variant === "challenge-name" && glovingTypographyStyles.challengeName,
 				sx as unknown as Record<string, unknown>
 			]}
 		>
