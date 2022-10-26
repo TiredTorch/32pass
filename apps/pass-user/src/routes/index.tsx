@@ -1,9 +1,11 @@
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Box, CircularProgress } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import { commonRoutes } from "./commonRoutes";
 import { privateRoutes } from "./privateRoutes";
 import { PrivateRoute, PublicRoute } from "@32pass/pass-user-lib";
+
+const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 
 const AppRoutes = () => {
 	return (
@@ -21,6 +23,10 @@ const AppRoutes = () => {
 			}
 		>
 			<Routes>
+				<Route
+					path="*"
+					element={<NotFoundPage />}
+				/>
 				{[...commonRoutes, ...privateRoutes].map((route, index) => (
 					<Route
 						{...route}

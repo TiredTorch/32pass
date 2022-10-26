@@ -4,3 +4,4 @@ export * from "./LoginPageContainer/LoginPageContainer";
 export * from "./ProposalPageContainer/ProposalPageContainer";
 export * from "./RegisterPageContainer/RegisterPageContainer";
 export * from "./AboutPageContainer/AboutPageContainer";
+export * from "./NotFoundPageContainer/NotFoundPageContainer";

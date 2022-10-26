@@ -43,5 +43,13 @@ export const glovingTypographyStyles = {
 	},
 	footer: {
 		fontSize: "calc(1.1vmax + 5px)",
+	},
+	notFound: {
+		color: "#39BEE7",
+		fontSize: "calc(2rem + 6vw)",
+		textShadow: "0px 4px 4px #000000",
+		"&:hover": {
+			textShadow: "0px 4px 4px #000000",
+		}
 	}
 };
