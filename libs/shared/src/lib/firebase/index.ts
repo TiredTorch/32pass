@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
 	apiKey: process.env["NX_API_KEY"],
@@ -10,5 +11,8 @@ const firebaseConfig = {
 	appId: process.env["NX_APP_ID"]
 };
 
+// export const up
+
 export const firebaseApp = initializeApp(firebaseConfig);
+export const firebaseFirestore = getFirestore(firebaseApp);
 export const userAuth = getAuth(firebaseApp);

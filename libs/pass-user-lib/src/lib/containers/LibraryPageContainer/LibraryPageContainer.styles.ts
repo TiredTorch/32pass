@@ -2,7 +2,7 @@ import { theme } from "../../theme/theme";
 
 export const libraryPageContainerStyles = {
 	root: {
-		height: "100%",
+		minHeight: "80vh",
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",

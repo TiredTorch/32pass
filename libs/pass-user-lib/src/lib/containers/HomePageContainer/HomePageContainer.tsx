@@ -1,11 +1,12 @@
 import { Box } from "@mui/material";
 import { ChallengeList, CountDownPanel, TargetPaper, UserChart } from "../../components";
-import { TargetPaperItemProps } from "../../components/common/TargetPaper/TargetPaperItem/TargetPaperItem.types";
 import { PageLayout } from "../../layout";
 import { AppRouteEnum } from "../../types";
 import { homePageContainerStyles } from "./HomePageContainer.styles";
+import { TargetPaperItemProps } from "../../components/common/TargetPaper/TargetPaperItem/TargetPaperItem.types";
 
 export const HomePageContainer = () => {
+
 	const targetData: TargetPaperItemProps[] = [
 		{
 			number: 6,

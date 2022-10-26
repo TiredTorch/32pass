@@ -1,7 +1,7 @@
 import { FC, useCallback } from "react";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { AppRouteEnum } from "../../../types/enums/paths";
+import { AppRouteEnum } from "../../../types/enums/paths.enum";
 import { Button, GlovingTypography } from "../../ui";
 import { Avatar } from "../../ui/Avatar/Avatar";
 import { HeaderProps } from "./Header.types";
@@ -51,6 +51,7 @@ export const Header: FC<HeaderProps> = ({
 					<Box
 						data-cy="unauth-header-home-button"
 						referrerPolicy="no-referrer"
+						slot="start"
 						onClick={handleNavToHome}
 						component={"img"}
 						src={darkLogo}

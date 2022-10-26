@@ -10,7 +10,8 @@ import { PageLayoutProps } from "./PageLayout.types";
 export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
 	children,
 	isPrivate,
-	currentPage
+	currentPage,
+	isLoading
 }) => {
 	const [user, loading] = useAuthState(userAuth);
 
@@ -23,7 +24,7 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
 
 	return (
 		<>
-			{!loading && (
+			{!loading && !isLoading && (
 				<Box
 					sx={[
 						pageLayoutStyles.root,

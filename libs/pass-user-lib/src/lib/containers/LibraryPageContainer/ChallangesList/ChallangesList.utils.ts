@@ -1,4 +1,4 @@
-import { ChallangeStatus } from "./ChallangesList.types";
+import { ChallangeStatus } from "../../../types";
 
 export const getListPreset = (status: ChallangeStatus) => {
 	switch (status) {
