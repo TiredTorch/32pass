@@ -8,9 +8,9 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const NotFoundPageContainer = () => {
-	
+
 	const navigate = useNavigate();
-	
+
 	const handleNavToHome = useCallback(
 		() => {
 			navigate(AppRouteEnum.HOME);

@@ -1,8 +1,7 @@
 import { FC, PropsWithChildren, useCallback } from "react";
 import { Box } from "@mui/material";
 import { signOut } from "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { userAuth } from "@32pass/shared";
+import { useGetUserDocument, userAuth } from "@32pass/shared";
 import { Footer, Header } from "../../components";
 import { pageLayoutStyles } from "./PageLayout.styles";
 import { PageLayoutProps } from "./PageLayout.types";
@@ -13,7 +12,7 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
 	currentPage,
 	isLoading
 }) => {
-	const [user, loading] = useAuthState(userAuth);
+	const userData = useGetUserDocument();
 
 	const handleExit = useCallback(
 		() => {
@@ -24,7 +23,7 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
 
 	return (
 		<>
-			{!loading && !isLoading && (
+			{!isLoading && (
 				<Box
 					sx={[
 						pageLayoutStyles.root,
@@ -32,10 +31,10 @@ export const PageLayout: FC<PropsWithChildren<PageLayoutProps>> = ({
 				>
 					<Header
 						isPrivate={!!isPrivate}
-						avatarSource={user?.photoURL ?? ""}
+						avatarSource={userData?.avatar ?? "https://memepedia.ru/wp-content/uploads/2021/01/anonimus-mem-6.jpg"}
 						currentPage={currentPage}
 						handleExit={handleExit}
-						userName={user?.displayName ?? "Anonymous"}
+						userName={userData?.fullname ?? "Anonymus"}
 					/>
 					{children}
 					{isPrivate && <Footer />}

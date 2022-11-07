@@ -42,16 +42,17 @@ const ChallangesList: FC<ChallangesListProps> = ({
 						{items.map((item, i) => (
 							<ChallangesListItem
 								key={i}
-								name={item.name}
-								description={item.description}
-								rate={item.rate}
+								challengeName={item.challengeName}
+								challengeDescription={item.challengeDescription}
+								challengeHardRate={item.challengeHardRate}
 								category={sectionStatus}
 								iconColor={listPreset.iconColor}
+								uid={item.uid}
 							/>
 						))}
 					</Box>
 				</Box>
-				}
+			}
 		</>
 
 	);

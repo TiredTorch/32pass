@@ -1,6 +1,7 @@
-import { ChallangeStatus, ChallengeData } from "../../../types";
+import { GameChallengeData } from "@32pass/shared";
+import { ChallangeStatus } from "../../../types";
 
 export type ChallangesListProps = {
 	sectionStatus: ChallangeStatus;
-	items: ChallengeData[];
+	items: GameChallengeData[];
 };

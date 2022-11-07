@@ -1,67 +1,48 @@
-import { Box, InputAdornment, OutlinedInput, Rating, useMediaQuery, IconButton } from "@mui/material";
-import { useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { Box, InputAdornment, OutlinedInput, Rating, useMediaQuery, IconButton, CircularProgress } from "@mui/material";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { GlovingTypography } from "../../components";
 import { PageLayout } from "../../layout";
 import { theme } from "../../theme/theme";
-import { AppRouteEnum } from "../../types";
+import { AppRouteEnum, GameData } from "../../types";
 import { challengePageContainerStyles } from "./ChallengePageContainer.styles";
 import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
 import ReviewList from "./ReviewList/ReviewList";
+import { useDocumentData } from "react-firebase-hooks/firestore";
+import { doc, DocumentReference } from "firebase/firestore";
+import { firebaseFirestore, GameChallengeData } from "@32pass/shared";
 
 export const ChallengePageContainer = () => {
-
-	const challengeMock = {
-		gameName: "The Elder Scrolls V SKYRIM",
-		gamePoster: "https://static.posters.cz/image/750/%D0%9F%D0%BB%D0%B0%D0%BA%D0%B0%D1%82%D0%B8/skyrim-dragonborn-i29157.jpg",
-		challengeName: "Pass the game with only spoon",
-		challengeHardRate: 4,
-		challengeDescription: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit consequatur vitae minima fuga ab officiis error vel assumenda suscipit quos qui, corrupti, rerum, vero sunt dicta ratione maiores rem natus.",
-		challengeReviews: [
-			{
-				user: {
-					avatar: "https://i1.sndcdn.com/avatars-000751801549-98zlio-t240x240.jpg",
-					name: "Kiril_420"
-				},
-				postDate: new Date(2011, 0, 1, 2, 3),
-				rating: 4,
-				content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora tempore dolorem reiciendis labore!",
-			},
-			{
-				user: {
-					avatar: "https://i1.sndcdn.com/avatars-000751801549-98zlio-t240x240.jpg",
-					name: "Kiril_420"
-				},
-				postDate: new Date(2011, 0, 1, 2, 3),
-				rating: 4,
-				content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora tempore dolorem reiciendis labore!",
-			},
-			{
-				user: {
-					avatar: "https://i1.sndcdn.com/avatars-000751801549-98zlio-t240x240.jpg",
-					name: "Kiril_420"
-				},
-				postDate: new Date(2011, 0, 1, 2, 3),
-				rating: 4,
-				content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora tempore dolorem reiciendis labore!",
-			},
-		]
-	};
-
-	const fetchChallengeByIdMock = (id: string) => challengeMock;
-
 	const { clgId } = useParams();
-	const challenge = clgId ? fetchChallengeByIdMock(clgId) : undefined;
+	const navigate = useNavigate();
+
+	const handleNavToNotFound = useCallback(
+		() => {
+			navigate("/404");
+		},
+		[],
+	);
+
+	const [clgData, clgLoading, clgError] = useDocumentData(
+		doc(firebaseFirestore, "challenges", clgId ?? " ") as DocumentReference<GameChallengeData>
+	);
+
+	const [gameData, gameLoading, gameError] = useDocumentData(
+		doc(firebaseFirestore, "games", clgData?.game ?? " ") as DocumentReference<GameData>
+	);
 
 	const isDownMd = useMediaQuery(theme.breakpoints.down("md"));
-
 	const [reviewInput, setReviewInput] = useState("");
+
+	useEffect(() => {
+		if (clgLoading) return;
+		if (!clgData) handleNavToNotFound();
+	}, [gameData, gameLoading]);
 
 	return (
 		<>
-			{!challenge ?
-				<Navigate to="/not-found" />
-				:
+			{!clgId && <CircularProgress />}
+			{!clgLoading && !clgError && clgData && clgId && gameData && !gameLoading && !gameError &&
 				<PageLayout
 					isPrivate={true}
 					currentPage={AppRouteEnum.CHALLENGE}
@@ -77,7 +58,7 @@ export const ChallengePageContainer = () => {
 							>
 								<Box
 									component="img"
-									src={challenge.gamePoster}
+									src={gameData?.img}
 									sx={challengePageContainerStyles.poster}
 								/>
 							</Box>
@@ -87,7 +68,7 @@ export const ChallengePageContainer = () => {
 								<GlovingTypography
 									variant="game-name"
 								>
-									{challenge.gameName}
+									{gameData?.name}
 								</GlovingTypography>
 								<Box
 									sx={challengePageContainerStyles.challengeMainInfoContainer}
@@ -95,10 +76,10 @@ export const ChallengePageContainer = () => {
 									<GlovingTypography
 										variant="challenge-name"
 									>
-										{challenge.challengeName}
+										{clgData.challengeName}
 									</GlovingTypography>
 									<Rating
-										value={challenge.challengeHardRate}
+										value={clgData.challengeHardRate}
 										readOnly
 										sx={challengePageContainerStyles.hardRate}
 									/>
@@ -107,7 +88,7 @@ export const ChallengePageContainer = () => {
 									variant="body3"
 									sx={challengePageContainerStyles.description}
 								>
-									{challenge.challengeDescription}
+									{clgData.challengeDescription}
 								</GlovingTypography>
 								<OutlinedInput
 									id="outlined-adornment-password"
@@ -135,7 +116,7 @@ export const ChallengePageContainer = () => {
 										sx={challengePageContainerStyles.lowerSection}
 									>
 										<ReviewList
-											items={challenge.challengeReviews}
+											items={clgData.challengeReviews}
 										/>
 									</Box>
 								}
@@ -148,7 +129,7 @@ export const ChallengePageContainer = () => {
 								sx={challengePageContainerStyles.lowerSection}
 							>
 								<ReviewList
-									items={challenge.challengeReviews}
+									items={clgData.challengeReviews}
 								/>
 							</Box>
 						}

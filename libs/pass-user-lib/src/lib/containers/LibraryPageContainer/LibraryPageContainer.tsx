@@ -1,16 +1,38 @@
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
-import { collection, CollectionReference } from "firebase/firestore";
+import { collection, CollectionReference, query, where } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { firebaseFirestore } from "@32pass/shared";
+import { firebaseFirestore, GameChallengeData, useGetUserDocument } from "@32pass/shared";
 import { Button, Input } from "../../components";
 import { PageLayout } from "../../layout";
 import ChallangesList from "./ChallangesList/ChallangesList";
-import { AppRouteEnum, ChallangeStatus, ChallengeData } from "../../types";
+import { AppRouteEnum, ChallangeStatus } from "../../types";
 import { libraryPageContainerStyles } from "./LibraryPageContainer.styles";
 
 export const LibraryPageContainer = () => {
+	const navigate = useNavigate();
+
+	const userData = useGetUserDocument();
+
 	const [сhallenges, isLoadingChallenges] = useCollectionData(
-		collection(firebaseFirestore, "challenges") as CollectionReference<ChallengeData>
+		query(
+			collection(firebaseFirestore,
+				"challenges"
+			),
+			where(
+				"uid",
+				"in",
+				// "not-in",
+				userData?.challenges?.map(item => item.challangeId) ?? [""])
+		) as CollectionReference<GameChallengeData>
+	);
+
+	const handleNavToProposal = useCallback(
+		() => {
+			navigate(AppRouteEnum.PROPOSAL);
+		},
+		[],
 	);
 
 	return (
@@ -28,18 +50,27 @@ export const LibraryPageContainer = () => {
 					>
 						<Input placeholder="Game name" />
 						<Input placeholder="Challange text" />
-						<Button type="blue-no-border">Add</Button>
+						<Button
+							type="blue-no-border"
+							onClick={handleNavToProposal}
+						>
+							Add
+						</Button>
 					</Box>
 					<Box
 						sx={libraryPageContainerStyles.mainSection}
 					>
-						{(Object.values(ChallangeStatus) as [ChallangeStatus]).map((item, i) => (
+						{/* {(Object.values(ChallangeStatus) as [ChallangeStatus]).map((item, i) => (
 							<ChallangesList
 								key={i}
 								sectionStatus={item as ChallangeStatus}
 								items={сhallenges.filter((clg) => clg.category === item as ChallangeStatus)}
 							/>
-						))}
+						))} */}
+						<ChallangesList
+							sectionStatus={ChallangeStatus.AVAILVABLE}
+							items={сhallenges}
+						/>
 					</Box>
 				</Box>}
 		</PageLayout>

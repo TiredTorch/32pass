@@ -34,7 +34,7 @@ const ReviewList: FC<ReviewListProps> = ({ items }) => {
 								<GlovingTypography
 									variant="body4"
 								>
-									{item.postDate.toDateString()}
+									{item.postDate}
 								</GlovingTypography>
 							</Box>
 							<Rating
